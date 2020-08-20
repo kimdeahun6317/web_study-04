@@ -12,7 +12,7 @@
 </head>
 <body>
 	<%
-	
+
 	String resourcePath = application.getInitParameter("noticePath");
 	String str = "";
 	try (BufferedReader br = new BufferedReader(
