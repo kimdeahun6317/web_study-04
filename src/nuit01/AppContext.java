@@ -11,26 +11,24 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.jasper.tagplugins.jstl.core.Out;
+
 @WebServlet("/AppContext")
 public class AppContext extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) {
 		processRequest(request, response);
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response){
+			
 		processRequest(request, response);
 	}
 
 
 
-	private void processRequest(HttpServletRequest request, HttpServletResponse response) 
-		
-	
-		throw IOException{
+	private void processRequest(HttpServletRequest request, HttpServletResponse response) {
 			ServletContext application = getServletContext();	
 	
 	
@@ -41,11 +39,11 @@ public class AppContext extends HttpServlet {
 							application.getResourceAsStream(resourcePath)))) {
 				
 				while ((str = br.readLine()) != null) {
-					out.print(str);
+					System.out.println(str);
 				}
 				
 			} catch (IOException e) {
-				out.print("예외 발생" + e.getMessage());
+				System.out.println("예외 발생" + e.getMessage());
 			}
 	}
 
